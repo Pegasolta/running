@@ -30,3 +30,13 @@ img {
 #llama.jumped {
   top: 13%;
 }
+
+.obstacle {
+  top: 36%;
+  left: 90%;
+}
+
+.losingScreen {
+  text-align: center;
+  display: none; 
+}
