@@ -29,7 +29,7 @@ $(document).ready(function() {
 
     // Obstacle Generator
     function obstacleMaker () {
-        var obstacle = $("#backgroundDiv").append("<img src='assets/Set1/_rocks/stone01.png' class='obstacle'>")
+        var obstacle = $("#backgroundDiv").append("<img src='assets/stone01.png' class='obstacle'>")
     }
     setInterval(obstacleMaker, Math.floor(Math.random() * (2500 - 1000)) + 1000)
 
