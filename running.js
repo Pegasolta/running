@@ -1,7 +1,7 @@
 $(document).ready(function() {
     console.log('loaded')
 
-//Background Image and Llama image storage
+    //Background Image and Llama image storage
     var img = $('img:first')
     var imgPosition = img.position()
     var $window = $(window)
@@ -14,7 +14,6 @@ $(document).ready(function() {
             $("#llama").addClass("jumped")
         }
     }).on('keyup', function() {
-        // if (llama top is 13%) {}
         $('#llama').removeClass('jumped')
     })
 
@@ -28,28 +27,27 @@ $(document).ready(function() {
     setInterval(movingBackground, 1000 / 50)
 
     // Obstacle Generator
-    function obstacleMaker () {
+    function obstacleMaker() {
         var obstacle = $("#backgroundDiv").append("<img src='assets/stone01.png' class='obstacle'>")
     }
     setInterval(obstacleMaker, Math.floor(Math.random() * (2500 - 1000)) + 1000)
 
     // Moving speed of all Obstacles
-    function obstacleAnim () {
+    function obstacleAnim() {
         $(".obstacle").animate({
             left: "-=25"
         }, 50)
 
-        //Collission of Obstacles with Llama
+        //Collision of Obstacles with Llama and Rocks off screen removal
         var obstacleLeft = parseInt($(".obstacle").css("left"))
-        var llamaRight = parseInt($("#llama").css("left")) + parseInt($("#llama").css("width"))
+        var llamaRight = parseInt($("#llama").css("left")) + parseInt($("#llama").css("width")) - 20
 
         var obstacleHeight = parseInt($(".obstacle").css("top"))
-        var llamaHeight = parseInt($("#llama").css("top")) + parseInt($("#llama").css("height"))
+        var llamaHeight = parseInt($("#llama").css("top")) + parseInt($("#llama").css("height")) - 30
 
         if (obstacleLeft < 0) {
             $("img:nth-child(3)").remove()
-        }
-        else if (obstacleLeft < llamaRight && llamaHeight > obstacleHeight) {
+        } else if (obstacleLeft < llamaRight && llamaHeight > obstacleHeight) {
             $("img:nth-child(3)").remove()
             $(".losingScreen").css("display", "block")
             $("#backgroundDiv").css("display", "none")

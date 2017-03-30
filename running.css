@@ -4,39 +4,44 @@
 }
 
 body {
-  overflow-x: hidden;
+    overflow-x: hidden;
+    background-color: rgba(220, 96, 108, 0.8);
+    font-family: "Quicksand", sans-serif;
 }
 
 header {
-  text-align: center;
-  background-color: rgba(220, 96, 108, 0.8)
-
+    text-align: center;
+    padding: 2.5% 0 5% 0;
 }
 
 img {
-  margin: 0;
-  max-height: 50%;
-  display: inline-block;
-  position: absolute;
+    margin: 0;
+    max-height: 50%;
+    display: inline-block;
+    position: absolute;
 }
 
 #llama {
-  left: 7%;
-  top: 40%;
-  max-height: 10%;
-  transition: top 0.6s;
+    left: 7%;
+    top: 55%;
+    max-height: 10%;
+    transition: top 0.6s;
 }
 
 #llama.jumped {
-  top: 13%;
+    top: 35%;
 }
 
 .obstacle {
-  top: 36%;
-  left: 90%;
+    top: 50%;
+    left: 90%;
 }
 
 .losingScreen {
-  text-align: center;
-  display: none; 
+    text-align: center;
+    display: none;
+    padding: 10% 0 10% 0;
+    border-top: 10px solid #238c92;
+    border-bottom: 12px solid #238c92;
+    background: #5db5bb;
 }
